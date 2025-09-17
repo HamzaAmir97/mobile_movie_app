@@ -15,7 +15,7 @@ import useFetch from "@/services/UseFecth";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 
-// import MovieCard from "@/components/MovieCard";
+import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
 // import TrendingCard from "@/components/TrendingCard";
 
@@ -26,7 +26,9 @@ const Index = () => {
     data: trendingMovies,
     loading: trendingLoading,
     error: trendingError,
-  } = useFetch(() => getTrendingMovies());
+  } = useFetch(() => fetchMovies({ query: "" }));
+  
+  // useFetch(() => getTrendingMovies());
 
   const {
     data: movies,
