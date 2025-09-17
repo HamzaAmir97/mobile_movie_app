@@ -9,7 +9,6 @@ import {
 } from "react-native";
 
 import { fetchMovies } from "@/services/api";
-// import { getTrendingMovies } from "@/services/appwrite";
 import useFetch from "@/services/UseFecth";
 
 import { icons } from "@/constants/icons";
@@ -17,6 +16,7 @@ import { images } from "@/constants/images";
 
 import MovieCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
+import { getTrendingMovies } from "@/services/appwrite";
 // import TrendingCard from "@/components/TrendingCard";
 
 const Index = () => {
@@ -28,7 +28,7 @@ const Index = () => {
     error: trendingError,
   } = useFetch(() => fetchMovies({ query: "iron man" }));
   
-  // useFetch(() => getTrendingMovies());
+  useFetch(() => getTrendingMovies());
 
   const {
     data: movies,
