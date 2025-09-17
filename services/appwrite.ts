@@ -40,6 +40,8 @@ export const updateSearchCount = async (query: string, movie: Movie) => {
   }
 };
 
+
+// get trending movies
 export const getTrendingMovies = async (): Promise<
   TrendingMovie[] | undefined
 > => {

@@ -5,12 +5,11 @@ import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 
 import { fetchMovies } from "@/services/api";
-// import { updateSearchCount } from "@/services/appwrite";
-// import useFetch from "@/services/usefetch ";
 
 import MovieDisplayCard from "@/components/MovieCard";
 import SearchBar from "@/components/SearchBar";
 import useFetch from "@/services/UseFecth";
+import { updateSearchCount } from "@/services/appwrite";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -34,9 +33,9 @@ const Search = () => {
         await loadMovies();
 
         // Call updateSearchCount only if there are results
-        // if (movies?.length! > 0 && movies?.[0]) {
-        //   await updateSearchCount(searchQuery, movies[0]);
-        // }
+        if (movies?.length! > 0 && movies?.[0]) {
+          await updateSearchCount(searchQuery, movies[0]);
+        }
       } else {
         reset();
       }
