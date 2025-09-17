@@ -26,7 +26,7 @@ const Index = () => {
     data: trendingMovies,
     loading: trendingLoading,
     error: trendingError,
-  } = useFetch(() => fetchMovies({ query: "" }));
+  } = useFetch(() => fetchMovies({ query: "iron man" }));
   
   // useFetch(() => getTrendingMovies());
 
